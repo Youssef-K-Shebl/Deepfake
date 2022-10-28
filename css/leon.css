@@ -98,6 +98,14 @@ body {
   width: 60px;
 }
 
+.header .upload-link {
+  color: white;
+  text-decoration: none;
+  background-color: var(--main-color);
+  padding: 10px 40px;
+  border-radius: 10px;
+}
+
 .header .links {
   position: relative;
 }
@@ -289,6 +297,9 @@ body {
 .services {
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: var(--section-background);
+  z-index: -2;
+  position: relative;
 }
 
 .services .services-content {
@@ -365,6 +376,7 @@ body {
 .portfolio {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
 }
 
 .portfolio .portfolio-content {
@@ -401,7 +413,6 @@ body {
 .about {
   padding-top: var(--section-padding);
   padding-bottom: calc(var(--section-padding) + 60px);
-  background-color: var(--section-background);
 }
 
 .about .about-content {
@@ -444,7 +455,7 @@ body {
 .about .about-content .image::after {
   content: "";
   position: absolute;
-  height: 250px;
+  height: 300px;
   width: 120px;
   border-left: 80px solid var(--main-color);
   border-bottom: 80px solid var(--main-color);
@@ -462,6 +473,17 @@ body {
 
 .about .about-content .image img {
   max-width: 100%;
+  position: relative;
+}
+
+.about .about-content .image img::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 80%);
 }
 
 .about .about-content .text {
@@ -498,9 +520,9 @@ body {
 /* Start Contact */
 
 .contact {
-  background-color: var(--section-background);
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
 }
 
 .contact .info {
@@ -566,8 +588,88 @@ footer span {
 /* End Footer */
 
 
+/* Start Upload */
+
+.upload {
+  padding-top: calc(var(--section-padding));
+  padding-bottom: calc(var(--section-padding));
+
+}
+
+.upload .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload .file {
+  display: none;
+}
+
+.upload label {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.upload label span {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 30px 65px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+  color: #fff;
+  font-weight: 700;
+  overflow: hidden;
+  font-size: 40px;
+}
+
+.upload label.progress-bar span::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -400px;
+  width: 400px;
+  height: 400px;
+  background-color: #00000080;
+  border-radius: 30% 40% 50% 40%;
+  animation: rotate 11s linear infinite;
+}
+
+.upload label.upload-complete span::after {
+  content: "Video Successfully Uploaded";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #00de59, #4caf50);
+  text-align: center;
+  line-height: 60px;
+  font-weight: 700;
+}
+
+.upload label.upload-complete span {
+  padding: 42px 85px;
+  transition: all ease 0.5s;
+  font-size: 40px;
+}
+
+.upload label h5 {
+  margin: 15px 0;
+}
+
+.upload label.progress-bar {
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  100%{
+    left: 0%;
+    transform: rotate(720deg);
+  }
+}
 
 
 
-
-
+/* End Upload */

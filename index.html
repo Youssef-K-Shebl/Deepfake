@@ -18,6 +18,7 @@
     <div class="header">
       <div class="container">
         <img class="logo" src="images/logo.png" alt="logo">
+        <a class="upload-link" href="#upload">Try it Now</a>
         <div class="links">
           <span class="icon">
             <span></span>
@@ -117,18 +118,11 @@
           </div>
           <div class="text">
             <p>
-              Deepfakes are videos or pictures altered to look other than their original state with
-the help of Artificial Intelligence. Initial development of this technology served to fulfil
-the requirement of generating synthetic videos in the entertainment sector. For animation films and influential science fiction films, deepfake can provide realistic output. With
-more development in the field, happen the development of applications which allow people
-to use this face-swapping feature for humour purpose. Such applications were available
-for everyone to use and were not generating much authentic result. The same technology,
-when combined with deep learning turned out to be a massive outbreak. With the help
-of artificial intelligence, deepfakes are the most realistic doctored images and videos.
+              Deepfakes are regarded as the most serious AI danger in the world of ever-expanding social media platforms. There are several scenarios in which these lifelike face swapped deepfakes are utilised to cause political discomfort, fake terrorism occurrences, and blackmail people. It is critical to recognise the difference between deepfake and clean video.
             </p>
             <hr>
             <p>
-              Our idea is to make a model detects whether the video is deepfake or not with help of machine learning techniques and other things.
+              In order to make the product suitable for usage for clients, we created a front end application where the user would submit the video. The model will process the video, and the result will be displayed back to the user with the categorization of the video as deepfake or real, as well as the model's confidence.
             </p>
           </div>
         </div>
@@ -198,6 +192,22 @@ of artificial intelligence, deepfakes are the most realistic doctored images and
 
     <!-- End Portfolio -->
 
+    <!-- Start Upload -->
+    <div class="upload" id="upload">
+      <div class="container">
+        <h2 class="special-heading">Upload</h2>
+        <p>Upload You Video To Detect Fakeness</p>
+        <div class="content">
+          <label class="upload-label">
+            <h5 class="filename"></h5>
+            <input type="file" class="file">
+            <span class="upload-file-label">Upload Your Video</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- End Upload -->
+
     <!-- Start Contact -->
 
     <div id="contact" class="contact">
@@ -226,6 +236,19 @@ of artificial intelligence, deepfakes are the most realistic doctored images and
     </footer>
 
     <!-- End Footer -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      $(".file").on('change', function(e) {
+        let filename = e.target.files[0].name;
+        $(".filename").text(filename);
+
+        $(".upload-label").addClass("progress-bar");
+
+        setTimeout(function() {
+          $(".upload-label").removeClass("progress-bar");
+          $(".upload-label").addClass("upload-complete");
+        }, 11000);
+      });
+    </script>
   </body>
 </html>
